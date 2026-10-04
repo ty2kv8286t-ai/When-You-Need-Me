@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>When You Miss Me ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+    background: linear-gradient(135deg, #ffd6e7, #fff0f6, #dff4ff);
+    color: #4a2634;
+    overflow-x: hidden;
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 20px;
+    opacity: 0.7;
+    animation: floatUp 8s linear infinite;
+    pointer-events: none;
+}
+
+.heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+.heart:nth-child(2) { left: 25%; animation-delay: 2s; }
+.heart:nth-child(3) { left: 45%; animation-delay: 4s; }
+.heart:nth-child(4) { left: 65%; animation-delay: 1s; }
+.heart:nth-child(5) { left: 85%; animation-delay: 3s; }
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-110vh) scale(1.5) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+.container {
+    width: 92%;
+    max-width: 700px;
+    margin: auto;
+    padding: 45px 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+    color: #c44772;
+}
+
+.subtitle {
+    font-size: 17px;
+    margin-bottom: 35px;
+    color: #74465a;
+}
+
+/* Envelope */
+.envelope {
+    background: rgba(255,255,255,0.9);
+    border-radius: 25px;
+    padding: 35px 25px;
+    box-shadow: 0 15px 40px rgba(150,70,100,0.18);
+    transition: transform 0.3s ease;
+}
+
+.envelope:hover {
+    transform: translateY(-5px);
+}
+
+.heart-big {
+    font-size: 70px;
+    animation: heartbeat 1.8s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+button {
+    border: none;
+    background: linear-gradient(135deg, #e86b96, #c94773);
+    color: white;
+    padding: 15px 28px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(190,65,105,0.25);
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.letter {
+    display: none;
+    text-align: left;
+    margin-top: 30px;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.letter.show {
+    display: block;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section {
+    background: rgba(255,255,255,0.85);
+    margin-top: 25px;
+    padding: 25px;
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(150,70,100,0.12);
+}
+
+.section h2 {
+    color: #c44772;
+    margin-top: 0;
+}
+
+.memory {
+    margin: 20px 0;
+    padding: 18px;
+    background: #fff6fa;
+    border-radius: 18px;
+}
+
+.memory strong {
+    color: #c44772;
+}
+
+.reasons {
+    text-align: left;
+}
+
+.reasons p {
+    margin: 13px 0;
+}
+
+.final-message {
+    display: none;
+    margin-top: 25px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.final-message.show {
+    display: block;
+    animation: fadeIn 1s ease;
+}
+
+.signature {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #c44772;
+    font-style: italic;
+}
+
+.footer {
+    margin-top: 35px;
+    font-size: 14px;
+    color: #805568;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts -->
+<div class="heart">❤️</div>
+<div class="heart">💕</div>
+<div class="heart">💗</div>
+<div class="heart">💞</div>
+<div class="heart">❤️</div>
+
+<div class="container">
+
+    <h1>When You Miss Me ❤️</h1>
+
+    <p class="subtitle">
+        A little piece of my heart for the nights when you wish I was there.
+    </p>
+
+    <div class="envelope">
+
+        <div class="heart-big">💌</div>
+
+        <h2>For My Favorite Person</h2>
+
+        <p>
+            If you're reading this, I know you probably miss me...
+            so I made this little place for you to come whenever you need me.
+        </p>
+
+        <button onclick="openLetter()">
+            Open My Letter 💗
+        </button>
+
+        <div id="letter" class="letter">
+
+            <p>
+                My love,
+            </p>
+
+            <p>
+                If you ever miss me so badly that you wish I could
+                magically appear beside you, I want you to come here
+                and remember that somewhere out there is a girl who
+                loves you more than she could ever put into words.
+            </p>
+
+            <p>
+                I wish I could be there right now. I wish I could pull
+                you into my arms, hold you as tight as I could, lay
+                beside you, play with your hair, and remind you that
+                everything is going to be okay.
+            </p>
+
+            <p>
+                I know the distance isn't always easy. Sometimes I wish
+                we didn't have to count the hours until we could see
+                each other again. But even with all those miles between
+                us, nothing about the way I love you has gotten smaller.
+            </p>
+
+            <p>
+                If anything, the distance has made me realize just how
+                much you mean to me.
+            </p>
+
+            <p>
+                You aren't just my girlfriend. You're my best friend,
+                my favorite person, my safe place, and the person I
+                want beside me through everything.
+            </p>
+
+            <p>
+                I still think about how everything started between us.
+                Who would've thought something as simple as a blue
+                Powerade would lead me to the person I would eventually
+                fall completely in love with?
+            </p>
+
+            <p>
+                And then there was April 5th...
+                the day I got to officially call you mine.
+            </p>
+
+            <p>
+                I would choose that day over and over again.
+            </p>
+
+            <p>
+                Every time I look at you, I swear I fall in love with
+                you all over again. Your ocean-blue eyes, your brown
+                hair, your smile, your laugh, the way you talk, the way
+                you care...
+                all of it.
+            </p>
+
+            <p>
+                You brought a side of me back that I didn't even know
+                I was missing. You brought a kind of happiness into my
+                life that I didn't know I could feel.
+            </p>
+
+            <p>
+                So when you miss me, please don't only think about the
+                distance.
+            </p>
+
+            <p>
+                Think about us.
+            </p>
+
+            <p>
+                Think about every laugh, every late-night conversation,
+                every little memory, every kiss, every "I love you,"
+                every moment where we realized just how much we mean
+                to each other.
+            </p>
+
+            <p>
+                And remember that there is someone who would give
+                anything just to hold you right now.
+            </p>
+
+            <p>
+                Me.
+            </p>
+
+            <p>
+                No matter how far away you are, you're still my person.
+                You're still my girl.
+                You're still the one I want.
+            </p>
+
+            <p>
+                And one day, I won't have to miss you from this far away.
+                I'll get to hold you whenever I want, kiss you whenever
+                I want, fall asleep beside you, wake up beside you, and
+                make all these miles between us disappear.
+            </p>
+
+            <p>
+                Until then, just know that my heart is with you.
+                Always.
+            </p>
+
+            <p>
+                I love you more than words could ever explain.
+                ❤️
+            </p>
+
+            <div class="signature">
+                Forever yours,<br>
+                Your girl ❤️
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section">
+
+        <h2>Our Little Story 🥹</h2>
+
+        <div class="memory">
+            <strong>It started with a blue Powerade 💙</strong>
+            <p>
+                Something so small ended up becoming the beginning
+                of something so incredibly important to me.
+            </p>
+        </div>
+
+        <div class="memory">
+            <strong>Then we became best friends 🤍</strong>
+            <p>
+                Somehow you became the person I could talk to about
+                absolutely anything.
+            </p>
+        </div>
+
+        <div class="memory">
+            <strong>Then I fell for you 💕</strong>
+            <p>
+                And before I even realized what was happening,
+                you had completely stolen my heart.
+            </p>
+        </div>
+
+        <div class="memory">
+            <strong>April 5th ❤️</strong>
+            <p>
+                The day I got to officially call you my girlfriend.
+                One of my favorite days ever.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="section reasons">
+
+        <h2>Things I Hope You Remember ❤️</h2>
+
+        <p>💗 You are loved.</p>
+        <p>💗 You are beautiful.</p>
+        <p>💗 You are important to me.</p>
+        <p>💗 You never have to apologize for needing rest.</p>
+        <p>💗 You never have to wonder if I care.</p>
+        <p>💗 Distance will never change what you mean to me.</p>
+        <p>💗 I will always be cheering you on.</p>
+        <p>💗 You will always have my heart.</p>
+
+    </div>
+
+    <div class="section">
+
+        <h2>One More Thing... 👀</h2>
+
+        <p>
+            There's something I really want you to remember.
+        </p>
+
+        <button onclick="showFinal()">
+            Tap Here ❤️
+        </button>
+
+        <div id="final" class="final-message">
+
+            <p>
+                If I could teleport to you right now,
+                I wouldn't even say anything at first.
+            </p>
+
+            <p>
+                I'd just hug you.
+            </p>
+
+            <p>
+                I'd hold you as tight as I could and stay there for
+                as long as you needed.
+            </p>
+
+            <p>
+                Because sometimes "I love you" isn't enough.
+                Sometimes I just want you to be able to feel it.
+            </p>
+
+            <p>
+                So until I can show you in person,
+                let this page remind you.
+            </p>
+
+            <p>
+                <strong>
+                    You are my girl.
+                    You are my best friend.
+                    You are my favorite person.
+                    And I choose you.
+                    Every single time.
+                </strong>
+            </p>
+
+            <p style="font-size:25px;">
+                I love you forever. ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Made with a whole lot of love, just for you ❤️
+    </div>
+
+</div>
+
+<script>
+
+function openLetter() {
+    document.getElementById("letter").classList.add("show");
+}
+
+function showFinal() {
+    document.getElementById("final").classList.add("show");
+}
+
+</script>
+
+</body>
+</html>
